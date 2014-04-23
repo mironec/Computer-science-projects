@@ -1,0 +1,2 @@
+Panel;0,0,300,500;menuPanel;MenuFrame
+Panel;300,0,500,550;statusPanel;AccountsFrame

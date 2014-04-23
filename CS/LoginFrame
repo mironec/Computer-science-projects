@@ -1,0 +1,6 @@
+Label;200,100,200,30;nameLabel;Email or account number:
+Label;200,150,200,30;passLabel;Password:
+TextField;400,100,200,30;name; 
+PasswordField;400,150,200,30;passw; 
+Button;300,200,200,50;loginButton;Login
+Button;300,250,200,50;registerButton;Register

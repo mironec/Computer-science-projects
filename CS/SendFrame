@@ -1,0 +1,6 @@
+Label;100,100,150,30;labNum;Account number:
+TextField;250,100,200,30;accNum; 
+Label;100,150,150,30;labAmn;Amount:
+TextField;250,150,200,30;money; 
+Button;150,200,200,50;sendSendButt;Send
+Button;400,0,45,30;XXXButt;X

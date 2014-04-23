@@ -1,0 +1,2 @@
+Panel;0,0,300,600;loggedMenuPanel;LoggedMenuFrame
+Panel;300,0,500,600;statusPanel;InfoFrame

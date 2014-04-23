@@ -1,0 +1,2 @@
+Button;50,10,200,30;createAccountButt;Create account
+Button;50,40,200,30;deleteAccountButt;Delete account

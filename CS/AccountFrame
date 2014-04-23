@@ -1,0 +1,22 @@
+Label;10,10,150,30;numLabel;Account number:
+TextField;160,10,150,30;num;%num%
+Label;10,60,150,30;fnameLabel;First name:
+TextField;160,60,150,30;fname;%fname%
+Label;10,110,150,30;snameLabel;Second name:
+TextField;160,110,150,30;sname;%sname%
+Label;10,160,150,30;passwLabel;Password:
+PasswordField;160,160,150,30;passw;%pass%
+Label;10,210,150,30;perNumLabel;Personal number:
+TextField;160,210,150,30;perNum;%perNum%
+Label;10,260,150,30;emailLabel;E-mail:
+TextField;160,260,150,30;email;%email%
+Label;10,310,150,30;phoneLabel;Phone number:
+TextField;160,310,150,30;phone;%phone%
+Label;10,360,150,30;addLabel;Address:
+TextField;160,360,150,30;add;%add%
+Label;10,410,150,30;balLabel;Balance:
+TextField;160,410,150,30;bal;%bal%
+Label;10,460,150,30;currLabel;Currency:
+TextField;160,460,150,30;curr;%curr%
+Button;10,510,150,30;accountSaveAccountButt;Save account
+Button;320,0,45,30;XButt;X

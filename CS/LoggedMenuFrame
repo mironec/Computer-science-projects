@@ -1,0 +1,4 @@
+Button;50,10,200,50;sendButt;Send money
+Button;50,60,200,50;loggedAccountButt;Account settings
+Button;50,110,200,50;deleteLoggedAccountButt;Delete account
+Button;50,160,200,50;logOutButt;Log Out

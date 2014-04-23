@@ -1,0 +1,18 @@
+Label;10,10,150,30;numLabel;Account number:
+Label;160,10,150,30;num;%num%
+Label;10,60,150,30;fnameLabel;First name:
+Label;160,60,150,30;fname;%fname%
+Label;10,110,150,30;snameLabel;Second name:
+Label;160,110,150,30;sname;%sname%
+Label;10,160,150,30;perNumLabel;Personal number:
+Label;160,160,150,30;perNum;%perNum%
+Label;10,210,150,30;emailLabel;E-mail:
+Label;160,210,150,30;email;%email%
+Label;10,260,150,30;phoneLabel;Phone number:
+Label;160,260,150,30;phone;%phone%
+Label;10,310,150,30;addLabel;Address:
+Label;160,310,150,30;add;%add%
+Label;10,360,150,30;balLabel;Balance:
+Label;160,360,150,30;bal;%bal%
+Label;10,410,150,30;currLabel;Currency:
+Label;160,410,150,30;curr;%curr%
