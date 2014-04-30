@@ -6,8 +6,10 @@ import cs.programs.BankGUI;
 import cs.programs.DayOfTheWeek;
 import cs.programs.FirstGui;
 import cs.programs.InterfaceCreator;
+import cs.programs.Lists;
 import cs.programs.Pii;
 import cs.programs.TestClass;
+import cs.programs.cards.CardsProgram;
 
 public abstract class CSProgram {
 	
@@ -40,6 +42,8 @@ public abstract class CSProgram {
 	public static final BMI bmi = new BMI(4);
 	public static final InterfaceCreator ic = new InterfaceCreator(5);
 	public static final BankGUI bgui = new BankGUI(6);
+	public static final Lists lists = new Lists(7);
+	public static final CardsProgram cards = new CardsProgram(8);
 	public static final TestClass test = new TestClass(64);
 
 	public String getName() {
