@@ -8,7 +8,6 @@ public class CardsProgram extends CSProgram {
 		super("CardsProgram", id);
 	}
 
-	@Override
 	public void start() {
 		Deck d = new Deck();
 		System.out.println(d.toString());
@@ -16,9 +15,8 @@ public class CardsProgram extends CSProgram {
 		System.out.println(d.toString());
 	}
 
-	@Override
 	public void help() {
-
+		
 	}
 
 }

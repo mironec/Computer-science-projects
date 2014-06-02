@@ -5,11 +5,14 @@ import cs.programs.Bank;
 import cs.programs.BankGUI;
 import cs.programs.DayOfTheWeek;
 import cs.programs.FirstGui;
+import cs.programs.InterestingAlgorithm;
 import cs.programs.InterfaceCreator;
 import cs.programs.Lists;
+import cs.programs.Merging;
 import cs.programs.Pii;
 import cs.programs.TestClass;
 import cs.programs.cards.CardsProgram;
+import cs.programs.graphs.Graphs;
 
 public abstract class CSProgram {
 	
@@ -44,6 +47,9 @@ public abstract class CSProgram {
 	public static final BankGUI bgui = new BankGUI(6);
 	public static final Lists lists = new Lists(7);
 	public static final CardsProgram cards = new CardsProgram(8);
+	public static final Graphs graphs = new Graphs(9);
+	public static final InterestingAlgorithm alg = new InterestingAlgorithm(10);
+	public static final Merging merg = new Merging(11);
 	public static final TestClass test = new TestClass(64);
 
 	public String getName() {
