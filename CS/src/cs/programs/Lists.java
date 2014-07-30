@@ -1,6 +1,5 @@
 package cs.programs;
 
-import java.awt.Toolkit;
 import java.util.ArrayList;
 
 import cs.CSProgram;
@@ -19,7 +18,6 @@ public class Lists extends CSProgram {
 		for(String s : list){
 			System.out.println(s);
 		}
-		Class t = Toolkit.class;
 	}
 
 	public void help() {
