@@ -9,6 +9,7 @@ import cs.programs.InterestingAlgorithm;
 import cs.programs.InterfaceCreator;
 import cs.programs.Lists;
 import cs.programs.Merging;
+import cs.programs.MyLinkedLists;
 import cs.programs.Pii;
 import cs.programs.TestClass;
 import cs.programs.cards.CardsProgram;
@@ -50,6 +51,7 @@ public abstract class CSProgram {
 	public static final Graphs graphs = new Graphs(9);
 	public static final InterestingAlgorithm alg = new InterestingAlgorithm(10);
 	public static final Merging merg = new Merging(11);
+	public static final MyLinkedLists mll = new MyLinkedLists(12);
 	public static final TestClass test = new TestClass(64);
 
 	public String getName() {
