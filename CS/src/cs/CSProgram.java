@@ -3,6 +3,7 @@ package cs;
 import cs.programs.BMI;
 import cs.programs.Bank;
 import cs.programs.BankGUI;
+import cs.programs.BinaryTrees;
 import cs.programs.DayOfTheWeek;
 import cs.programs.FirstGui;
 import cs.programs.InterestingAlgorithm;
@@ -52,6 +53,7 @@ public abstract class CSProgram {
 	public static final InterestingAlgorithm alg = new InterestingAlgorithm(10);
 	public static final Merging merg = new Merging(11);
 	public static final MyLinkedLists mll = new MyLinkedLists(12);
+	public static final BinaryTrees bt = new BinaryTrees(13);
 	public static final TestClass test = new TestClass(64);
 
 	public String getName() {

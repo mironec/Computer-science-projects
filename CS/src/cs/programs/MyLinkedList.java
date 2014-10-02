@@ -81,6 +81,13 @@ public class MyLinkedList<T> implements Iterable<T>{
 		if(index == 0){
 			if(last == first)last = null;
 			first = first.getNext();
+			length--;
+			return true;
+		}
+		if(index == length-1){
+			last = getItem(length-2);
+			last.setNext(null);
+			length--;
 			return true;
 		}
 		Item<T> current = getItem(index-1);
