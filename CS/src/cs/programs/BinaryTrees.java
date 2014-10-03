@@ -16,7 +16,46 @@ public class BinaryTrees extends CSProgram{
 			else root.add(val);
 		}
 		
-		public int lvlSize(int lvl){
+		public T findMax(){
+			if(root==null) return null;
+			return root.findMax();
+		}
+		
+		public void dislay(int spaceWidth){
+			int space = maxWidth()*spaceWidth;
+			for(int x=0;true;x++){
+				if(displayLvl(x,space,spaceWidth)==0) break;
+			}
+		}
+		
+		private int displayLvl(int lvl,int space,int spaceWidth){
+			int s = lvlWidth(lvl);
+			int mySpace = (int)Math.pow(2, lvl)*spaceWidth;
+			for(int x=0;x<(space-mySpace)/2;x++){
+				System.out.print(" ");
+			}
+			for(int x=0;x<mySpace;x++){
+				Node nod = root.get(lvl,x);
+				if(nod==null) for(int t=0;t<spaceWidth;t++) System.out.print(" ");
+				nod.display(spaceWidth);
+			}
+			for(int x=0;x<(space-mySpace)/2;x++){
+				System.out.print(" ");
+			}
+			return s;
+		}
+		
+		private int maxWidth(){
+			int max = 0;
+			for(int x=0;true;x++){
+				int s = lvlWidth(x);
+				if(s>max) max = s;
+				if(s==0) break;
+			}
+			return max;
+		}
+		
+		private int lvlWidth(int lvl){
 			return root==null?0:root.lvlSize(lvl);
 		}
 		
@@ -37,6 +76,15 @@ public class BinaryTrees extends CSProgram{
 				add(new Node(val));
 			}
 			
+			public Node get(int lvl, int num){
+				//if(num>=)
+				return null;
+			}
+			
+			public void display(int spaceWidth){
+				
+			}
+			
 			public void add(Node nod){
 				if(this.compareTo(nod)>=0){
 					if(greater==null) greater=nod; else greater.add(nod);
@@ -44,6 +92,11 @@ public class BinaryTrees extends CSProgram{
 				else{
 					if(lesser==null) lesser=nod; else lesser.add(nod);;
 				}
+			}
+			
+			public T findMax(){
+				if(greater==null) return this.val;
+				else return greater.findMax();
 			}
 			
 			public int lvlSize(int lvl){
@@ -81,7 +134,7 @@ public class BinaryTrees extends CSProgram{
 			System.out.println(x+": "+BT.contains(x));
 		}
 		for(int x=0;true;x++){
-			int lvl = BT.lvlSize(x);
+			int lvl = BT.lvlWidth(x);
 			System.out.println(x+" lvl: "+lvl);
 			if(lvl==0) break;
 		}
