@@ -16,6 +16,10 @@ public class BinaryTrees extends CSProgram{
 			else root.add(val);
 		}
 		
+		public int lvlSize(int lvl){
+			return root==null?0:root.lvlSize(lvl);
+		}
+		
 		public boolean contains(T val){
 			return root==null?false:root.contains(val);
 		}
@@ -34,18 +38,24 @@ public class BinaryTrees extends CSProgram{
 			}
 			
 			public void add(Node nod){
-				Node whereToAdd;
-				if(this.compareTo(nod)>=0)
-					whereToAdd=greater;
-				else
-					whereToAdd=lesser;
-				if(whereToAdd==null) whereToAdd=nod;
-				else whereToAdd.add(nod);
+				if(this.compareTo(nod)>=0){
+					if(greater==null) greater=nod; else greater.add(nod);
+				}
+				else{
+					if(lesser==null) lesser=nod; else lesser.add(nod);;
+				}
+			}
+			
+			public int lvlSize(int lvl){
+				if(lvl==0) return 1;
+				else{
+					return (lesser==null?0:lesser.lvlSize(lvl-1)) + (greater==null?0:greater.lvlSize(lvl-1));
+				}
 			}
 			
 			public boolean contains(T val){
-				if(this.compareTo(val)>0) return greater.contains(val);
-				if(this.compareTo(val)<0) return lesser.contains(val);
+				if(this.compareTo(val)>0) return greater==null?false:greater.contains(val);
+				if(this.compareTo(val)<0) return lesser==null?false:lesser.contains(val);
 				if(val.equals(this.val)) return true;
 				return false;
 			}
@@ -69,6 +79,11 @@ public class BinaryTrees extends CSProgram{
 		BT.add(1);BT.add(2);BT.add(3);BT.add(4);BT.add(5);
 		for(int x=0;x<51;x++){
 			System.out.println(x+": "+BT.contains(x));
+		}
+		for(int x=0;true;x++){
+			int lvl = BT.lvlSize(x);
+			System.out.println(x+" lvl: "+lvl);
+			if(lvl==0) break;
 		}
 	}
 	
