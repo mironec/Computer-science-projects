@@ -17,7 +17,7 @@ public class BinaryTrees extends CSProgram{
 		}
 		
 		public boolean contains(T val){
-			return true;
+			return root==null?false:root.contains(val);
 		}
 		
 		private class Node implements Comparable<Node>{
@@ -43,9 +43,19 @@ public class BinaryTrees extends CSProgram{
 				else whereToAdd.add(nod);
 			}
 			
-			@Override
+			public boolean contains(T val){
+				if(this.compareTo(val)>0) return greater.contains(val);
+				if(this.compareTo(val)<0) return lesser.contains(val);
+				if(val.equals(this.val)) return true;
+				return false;
+			}
+			
 			public int compareTo(Node nod) {
 				return val.compareTo(nod.val);
+			}
+			
+			public int compareTo(T val) {
+				return this.val.compareTo(val);
 			}
 		}
 	}
