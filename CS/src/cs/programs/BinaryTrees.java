@@ -1,5 +1,8 @@
 package cs.programs;
 
+import java.util.ArrayList;
+import java.util.Stack;
+
 import cs.CSProgram;
 
 public class BinaryTrees extends CSProgram{
@@ -9,6 +12,49 @@ public class BinaryTrees extends CSProgram{
 		
 		public BinaryTree(){
 			
+		}
+		
+		public int depth(){
+			if(root==null) return 0;
+			return root.depth();
+		}
+		
+		public int sizeRecursive(){
+			if(root==null) return 0;
+			return 1+root.size();
+		}
+		
+		public int numOfLeaves(){
+			if(root==null)
+				return 0;
+			return root.numOfLeaves();
+		}
+		
+		public int sizeRecursiveTree(){return sizeRecursiveTree(root);}
+		
+		private int sizeRecursiveTree(Node myRoot){
+			if(myRoot==null) return 0;
+			return 1+sizeRecursiveTree(myRoot.getLesser())+sizeRecursiveTree(myRoot.getGreater());
+		}
+		
+		private int sizeNonRecursive(){
+			if(root==null) return 0;
+			int size = 1;
+			Node curr = root;
+			Stack<Node> nodes = new Stack<Node>();
+			Node theForbiddenOne = null;
+			//ArrayList<Node> nodes = new ArrayList<>();
+			while(curr!=null){
+				nodes.add(curr);
+				size++;
+				if(curr.getLesser()!=null&&curr.getLesser()!=theForbiddenOne) curr=curr.getLesser();
+				else if(curr.getGreater()!=null&&curr.getGreater()!=theForbiddenOne) curr=curr.getGreater();
+				else{
+					theForbiddenOne=nodes.pop();
+					curr=nodes.pop();
+				}
+			}
+			return size;
 		}
 		
 		public void add(T val){
@@ -72,6 +118,35 @@ public class BinaryTrees extends CSProgram{
 				this.val = val;
 			}
 			
+			public int depth(){
+				int l,r;
+				if(lesser==null)
+					l = 0;
+				else
+					l = lesser.depth();
+				if(greater==null)
+					r=0;
+				else
+					r = greater.depth();
+				return (l>r?l:r)+1;
+			}
+			
+			public int numOfLeaves(){
+				return lesser==null?(greater==null?1:greater.numOfLeaves()):(greater==null?lesser.numOfLeaves():lesser.numOfLeaves()+greater.numOfLeaves());
+			}
+			
+			public Node getLesser(){
+				return lesser;
+			}
+			
+			public Node getGreater(){
+				return greater;
+			}
+			
+			public int size(){
+				return (lesser==null?0:1+lesser.size())+(greater==null?0:1+greater.size());
+			}
+			
 			public void add(T val){
 				add(new Node(val));
 			}
@@ -129,7 +204,7 @@ public class BinaryTrees extends CSProgram{
 	
 	public void start(){
 		BinaryTree<Integer> BT = new BinaryTree<Integer>();
-		BT.add(1);BT.add(2);BT.add(3);BT.add(4);BT.add(5);
+		BT.add(10);BT.add(8);BT.add(12);BT.add(7);BT.add(9);BT.add(11);BT.add(13);
 		for(int x=0;x<51;x++){
 			System.out.println(x+": "+BT.contains(x));
 		}
@@ -138,6 +213,7 @@ public class BinaryTrees extends CSProgram{
 			System.out.println(x+" lvl: "+lvl);
 			if(lvl==0) break;
 		}
+		System.out.println(BT.depth());
 	}
 	
 	public void help(){}
