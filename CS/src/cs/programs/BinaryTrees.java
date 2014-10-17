@@ -37,26 +37,6 @@ public class BinaryTrees extends CSProgram{
 			return 1+sizeRecursiveTree(myRoot.getLesser())+sizeRecursiveTree(myRoot.getGreater());
 		}
 		
-		private int sizeNonRecursive(){
-			if(root==null) return 0;
-			int size = 1;
-			Node curr = root;
-			Stack<Node> nodes = new Stack<Node>();
-			Node theForbiddenOne = null;
-			//ArrayList<Node> nodes = new ArrayList<>();
-			while(curr!=null){
-				nodes.add(curr);
-				size++;
-				if(curr.getLesser()!=null&&curr.getLesser()!=theForbiddenOne) curr=curr.getLesser();
-				else if(curr.getGreater()!=null&&curr.getGreater()!=theForbiddenOne) curr=curr.getGreater();
-				else{
-					theForbiddenOne=nodes.pop();
-					curr=nodes.pop();
-				}
-			}
-			return size;
-		}
-		
 		public void add(T val){
 			if(root==null) root=new Node(val);
 			else root.add(val);
@@ -125,7 +105,7 @@ public class BinaryTrees extends CSProgram{
 				else
 					l = lesser.depth();
 				if(greater==null)
-					r=0;
+					r = 0;
 				else
 					r = greater.depth();
 				return (l>r?l:r)+1;
@@ -204,7 +184,8 @@ public class BinaryTrees extends CSProgram{
 	
 	public void start(){
 		BinaryTree<Integer> BT = new BinaryTree<Integer>();
-		BT.add(10);BT.add(8);BT.add(12);BT.add(7);BT.add(9);BT.add(11);BT.add(13);
+		//BT.add(10);BT.add(8);BT.add(12);BT.add(7);BT.add(9);BT.add(11);BT.add(13);
+		BT.add(2);BT.add(3);BT.add(4);BT.add(5);BT.add(6);BT.add(1);
 		for(int x=0;x<51;x++){
 			System.out.println(x+": "+BT.contains(x));
 		}
