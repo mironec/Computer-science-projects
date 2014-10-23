@@ -7,11 +7,70 @@ import cs.CSProgram;
 
 public class BinaryTrees extends CSProgram{
 	
+	private class Stack<T>{
+		Node first;
+		
+		public void push(T val){
+			Node nod = new Node(val);
+			nod.setNext(first);
+			first = nod;
+		}
+		
+		public T pop(){
+			T val = first.getValue();
+			first = first.getNext();
+			return val;
+		}
+		
+		public boolean empty(){
+			return first==null;
+		}
+		
+		public T peek(){
+			return first.getValue();
+		}
+		
+		private class Node{
+			private Node next;
+			private T val;
+			
+			public Node(T val){
+				this.val = val;
+			}
+			
+			public void setNext(Node n){
+				next = n;
+			}
+			
+			public Node getNext(){
+				return next;
+			}
+			
+			public T getValue(){
+				return val;
+			}
+		}
+	}
+	
 	private class BinaryTree<T extends Comparable<T>>{
 		private Node root;
 		
 		public BinaryTree(){
 			
+		}
+		
+		public void stackDisplay(){
+			Stack<Node> s = new Stack<>();
+			s.push(root);
+			int x=0;
+			int d=0;
+			while(!s.empty()){
+				Node n = s.pop();
+				if(n!=null) s.push(n.lesser);
+				if(n!=null) s.push(n.greater);
+				System.out.print((n==null?0:n.val) + " ");
+				x++;
+			}
 		}
 		
 		public int depth(){
@@ -186,7 +245,7 @@ public class BinaryTrees extends CSProgram{
 		BinaryTree<Integer> BT = new BinaryTree<Integer>();
 		//BT.add(10);BT.add(8);BT.add(12);BT.add(7);BT.add(9);BT.add(11);BT.add(13);
 		BT.add(2);BT.add(3);BT.add(4);BT.add(5);BT.add(6);BT.add(1);
-		for(int x=0;x<51;x++){
+		/*for(int x=0;x<51;x++){
 			System.out.println(x+": "+BT.contains(x));
 		}
 		for(int x=0;true;x++){
@@ -194,7 +253,8 @@ public class BinaryTrees extends CSProgram{
 			System.out.println(x+" lvl: "+lvl);
 			if(lvl==0) break;
 		}
-		System.out.println(BT.depth());
+		//System.out.println(BT.depth());*/
+		BT.stackDisplay();
 	}
 	
 	public void help(){}
