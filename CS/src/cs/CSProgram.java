@@ -13,6 +13,7 @@ import cs.programs.Merging;
 import cs.programs.MyLinkedLists;
 import cs.programs.Pii;
 import cs.programs.Queues;
+import cs.programs.QuickSorts;
 import cs.programs.TestClass;
 import cs.programs.Tries;
 import cs.programs.cards.CardsProgram;
@@ -58,6 +59,7 @@ public abstract class CSProgram {
 	public static final BinaryTrees bt = new BinaryTrees(13);
 	public static final Tries tr = new Tries(14);
 	public static final Queues que = new Queues(15);
+	public static final QuickSorts qs = new QuickSorts(16);
 	public static final TestClass test = new TestClass(64);
 
 	public String getName() {
